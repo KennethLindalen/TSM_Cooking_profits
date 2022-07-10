@@ -56,20 +56,20 @@ def to_copper(val):
 
 
 # Materials prices
-ls = findPrice("173032")
-sfp = findPrice("173036")
-iria = findPrice("173033")
-ss = findPrice("179315")
-rsw = findPrice("172054")
-tr = findPrice("172053")
-ccm = findPrice("179314")
+ls = findPrice("173032") # lost_sole
+sfp = findPrice("173036") # sprinefin_piranha
+iria = findPrice("173033") # iridecent_amberjack
+ss = findPrice("179315") # shadowy_shank
+rsw = findPrice("172054") # raw_sepraphic_wing
+tr = findPrice("172053") # tenebrous_ribs
+ccm = findPrice("179314") # creeping_crawler_meat
 
 # Vendor materials
-sap = to_copper([4, 50, 0]) / 5
-iav = to_copper([3, 75, 0]) / 5
-lwf = to_copper([3, 50, 0]) / 5
-rgm = to_copper([4, 25, 0]) / 5
-mots = to_copper([5, 0, 0]) / 5
+sap = to_copper([4, 50, 0]) / 5 # smuggled_azerothian_produce
+iav = to_copper([3, 75, 0]) / 5 # inconceivable_aged_vinegar
+lwf = to_copper([3, 50, 0]) / 5 # lusterwheat_flour
+rgm = to_copper([4, 25, 0]) / 5 # rich_grazer_milk
+mots = to_copper([5, 0, 0]) / 5 # medley_of_transplanar_spices
 
 # Crafts prices
 spinsouf = {

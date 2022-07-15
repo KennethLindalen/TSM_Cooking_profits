@@ -21,7 +21,7 @@ with open(PATH, "r") as f:
                 nf.write(k)
 
 
-# Generic bubble sort to sort prices, sorts by 3. value in list. (idx 2)
+# Generic bubble sort to sort prices, sorts by 3rd value in list. (idx 2)
 def bubble_sort(lst):
     l = len(lst)
     for i in range(0, l):

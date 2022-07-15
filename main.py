@@ -20,6 +20,7 @@ with open(PATH, "r") as f:
             with open("nydata.txt", "w+") as nf:
                 nf.write(k)
 
+
 # Generic bubble sort to sort prices, sorts by 3. value in list. (idx 2)
 def bubble_sort(lst):
     l = len(lst)
@@ -31,6 +32,7 @@ def bubble_sort(lst):
                 lst[j + 1] = _tmp
     return lst
 
+
 # Find price in TSM addon data
 def find_price(val):
     with open("nydata.txt", "r") as mf:
@@ -39,6 +41,7 @@ def find_price(val):
             i.pop()
             if val in i[0]:
                 return [int(x) for x in i]
+
 
 # Format copper to gold, silver and copper
 def format_currency(val):
@@ -53,6 +56,7 @@ def format_currency(val):
         copper = 0
 
     return "%sg %ss %sc" % (round(gold, 0), round(silver, 0), round(copper, 0))
+
 
 # Format gold, silver and copper into just copper
 def to_copper(val):
@@ -149,7 +153,6 @@ tenebrous_crown_roast = {
         (tr[1] * 3) + (ccm[1] * 3) + (mots * 4) + (
                 rgm * 2))
 }
-
 
 # List of crafts to make
 crafts = [iridescent_ravioli, steak_a_la_mode, tenebrous_crown_roast, spinefin_souffle]

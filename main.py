@@ -21,12 +21,12 @@ with open(PATH, "r") as f:
                 nf.write(k)
 
 
-# Generic bubble sort to sort prices, sorts by 3rd value in list. (idx 2)
+# Generic bubble sort to sort prices, sorts by 5th value in list. (idx 4)
 def bubble_sort(lst):
     l = len(lst)
     for i in range(0, l):
         for j in range(0, l - i - 1):
-            if (lst[j][2] > lst[j + 1][2]):
+            if (lst[j][4] > lst[j + 1][4]):
                 _tmp = lst[j]
                 lst[j] = lst[j + 1]
                 lst[j + 1] = _tmp
@@ -160,8 +160,8 @@ crafts = [iridescent_ravioli, steak_a_la_mode, tenebrous_crown_roast, spinefin_s
 _p = []
 
 # Generate temporary list to view in table in terminal
-for l in crafts:
-    _p.append([l['name'],l['minBuy_F'],l['market_F'], l['craftMin_F'], format_currency(int((l['craftMin'] - (l['minBuy'] / 3))))])
+for craft in crafts:
+    _p.append([craft['name'], craft['minBuy_F'], craft['market_F'], craft['craftMin_F'], format_currency(int((craft['craftMin'] - (craft['minBuy'] / 3))))])
 
 # Sort prices
 _p = bubble_sort(_p)

@@ -9,6 +9,7 @@ from rich.table import Table
 
 PATH = "E:\Spill\World of Warcraft\_retail_\Interface\AddOns\TradeSkillMaster_AppHelper\AppData.lua"
 REALM = "Draenor"
+REALM_DATA_FILE="DataFile.txt"
 table = Table(title="Cooking profits")
 
 # Reads addon data
@@ -17,7 +18,7 @@ with open(PATH, "r") as f:
     for k in x:
         if f'"AUCTIONDB_MARKET_DATA","{REALM}"' in k:
             k = k.replace("},", "},\n")
-            with open("nydata.txt", "w+") as nf:
+            with open(REALM_DATA_FILE, "w+") as nf:
                 nf.write(k)
 
 
@@ -35,7 +36,7 @@ def bubble_sort(lst):
 
 # Find price in TSM addon data
 def find_price(val):
-    with open("nydata.txt", "r") as mf:
+    with open(REALM_DATA_FILE, "r") as mf:
         for i in mf.readlines():
             i = i.replace("{", "").replace("}", "").split(",")
             i.pop()

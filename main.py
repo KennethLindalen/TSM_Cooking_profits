@@ -48,14 +48,14 @@ def format_currency(val):
     gold = val / 10000 % 100
     silver = val / 100 % 100
     copper = val % 100
-    if (gold <= 1):
+    if (gold < 1):
         gold = 0
-    if (silver <= 1):
+    if (silver < 1):
         silver = 0
-    if (copper <= 1):
+    if (copper < 1):
         copper = 0
 
-    return "%sg %ss %sc" % (round(gold, 0), round(silver, 0), round(copper, 0))
+    return "%sg %ss" % (round(gold, 0), round(silver, 0))
 
 
 # Format gold, silver and copper into just copper
@@ -161,15 +161,16 @@ _p = []
 
 # Generate temporary list to view in table in terminal
 for l in crafts:
-    _p.append([l['name'], l['craftMin_F'], format_currency(int((l['craftMin'] - (l['minBuy'] * 3))))])
+    _p.append([l['name'],l['minBuy_F'],l['market_F'], l['craftMin_F'], format_currency(int((l['craftMin'] - (l['minBuy'] / 3))))])
 
 # Sort prices
 _p = bubble_sort(_p)
+
 # Reverse sorted list so most profitable comes first
 _p.reverse()
 
 # Cols for Table
-cols = ["Navn", "Craft cost for 1", "Profit for 1"]
+cols = ["Navn", "Min buyout","Market value", "Craft cost for 1", "Profit for 1"]
 # Populate table
 # - Rows
 for col in cols:

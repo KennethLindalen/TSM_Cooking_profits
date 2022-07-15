@@ -161,7 +161,7 @@ _p = []
 
 # Generate temporary list to view in table in terminal
 for l in crafts:
-    _p.append([l['name'], l['craftMin_F'], format_currency(int((l['craftMin'] * 3) - int(l['minBuy'])))])
+    _p.append([l['name'], l['craftMin_F'], format_currency(int((l['craftMin'] - (l['minBuy'] * 3))))])
 
 # Sort prices
 _p = bubble_sort(_p)
